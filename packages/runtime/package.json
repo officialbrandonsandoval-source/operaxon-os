@@ -1,0 +1,22 @@
+{
+  "name": "@operaxon/runtime",
+  "version": "0.1.0",
+  "description": "Open-source runtime layer for Operaxon OS — gateway, channels, sessions, cron, MCP",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@operaxon/types": "*",
+    "@operaxon/governor": "*",
+    "@operaxon/meridian": "*",
+    "@operaxon/security": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}

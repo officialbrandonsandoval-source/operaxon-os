@@ -1,0 +1,20 @@
+{
+  "name": "@operaxon/coordinator",
+  "version": "0.1.0",
+  "description": "Coordinator — multi-agent orchestration engine for Operaxon OS",
+  "license": "SEE LICENSE IN LICENSE-PROPRIETARY",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@operaxon/types": "*",
+    "@operaxon/security": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}

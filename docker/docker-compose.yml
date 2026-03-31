@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  operaxon:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: operaxon-os
+    restart: unless-stopped
+    ports:
+      - "${OPERAXON_PORT:-3000}:3000"
+    volumes:
+      - operaxon-data:/data/operaxon
+      - ./config:/app/config:ro
+    environment:
+      - NODE_ENV=production
+      - OPERAXON_DATA_DIR=/data/operaxon
+      - OPERAXON_CONFIG_PATH=/app/config/operaxon.config.json
+    # Security: read-only root filesystem
+    read_only: true
+    tmpfs:
+      - /tmp:size=100M
+    # Security: drop all capabilities, add only what's needed
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    # Security: no privilege escalation
+    security_opt:
+      - no-new-privileges:true
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  operaxon-data:
+    driver: local

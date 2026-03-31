@@ -1,0 +1,28 @@
+{
+  "name": "@operaxon/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for Operaxon OS",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "operaxon": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@operaxon/types": "*",
+    "@operaxon/runtime": "*",
+    "@operaxon/governor": "*",
+    "@operaxon/meridian": "*",
+    "@operaxon/sentinel": "*",
+    "@operaxon/coordinator": "*",
+    "@operaxon/security": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}

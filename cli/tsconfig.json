@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../packages/types" },
+    { "path": "../packages/runtime" },
+    { "path": "../packages/governor" },
+    { "path": "../packages/meridian" },
+    { "path": "../packages/sentinel" },
+    { "path": "../packages/coordinator" },
+    { "path": "../packages/security" }
+  ]
+}

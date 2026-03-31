@@ -1,0 +1,30 @@
+{
+  "name": "@operaxon/os",
+  "version": "0.1.0",
+  "description": "The operating system for agentic businesses",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/types",
+    "packages/security",
+    "packages/governor",
+    "packages/meridian",
+    "packages/runtime",
+    "packages/sentinel",
+    "packages/coordinator",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf packages/*/dist cli/dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}
