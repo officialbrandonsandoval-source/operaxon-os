@@ -73,7 +73,7 @@ export class CronScheduler {
   remove(id: string): boolean {
     const entry = this.jobs.get(id);
     if (!entry) return false;
-    entry.task.destroy();
+    entry.task.stop();
     this.jobs.delete(id);
     console.log(`[Cron] Removed job: ${id}`);
     return true;
@@ -90,7 +90,7 @@ export class CronScheduler {
   }
 
   shutdown(): void {
-    this.jobs.forEach(({ task }) => task.destroy());
+    this.jobs.forEach(({ task }) => task.stop());
     this.jobs.clear();
     console.log('[Cron] Scheduler shut down');
   }
