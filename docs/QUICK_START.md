@@ -142,12 +142,42 @@ docker-compose up -d
 
 ---
 
-## Deploy to Railway
+## Deploy to Production
 
+### Recommended: Fly.io
+
+1. Install [Fly CLI](https://fly.io/docs/getting-started/installing-flyctl/)
+2. Authenticate: `flyctl auth login`
+3. Launch: `flyctl launch` (follow prompts, uses `fly.toml` from repo)
+4. Deploy: `flyctl deploy`
+5. Check status: `flyctl status`
+
+**Why Fly.io:** Fast cold starts, global edge deployment, excellent reliability.
+
+---
+
+### Alternative: Railway
+
+**⚠️ Security Note:** Railway had a CDN caching incident (March 30, 2026) and has addressed it. Safe to use with proper token hygiene.
+
+**Before deploying:**
+1. Rotate your Railway API tokens (revoke old, generate new)
+2. Use environment variables for all secrets (`.env` never committed)
+3. Enable Railway's IP allowlisting if available
+
+**Deploy:**
 1. Push repo to GitHub
 2. Go to [railway.app](https://railway.app) → New Project → Deploy from GitHub
 3. Add environment variables from `.env.example`
 4. Railway auto-deploys on push
+
+---
+
+### Other Options
+
+- **Heroku**: Standard Node.js support, `Procfile` ready
+- **Docker Registry**: Build and push to ECR, GCR, or DockerHub
+- **Self-hosted**: Docker Compose on any VPS (Ubuntu/Debian)
 
 ---
 
