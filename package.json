@@ -12,6 +12,10 @@
     "packages/runtime",
     "packages/sentinel",
     "packages/coordinator",
+    "packages/billing",
+    "packages/onboarding",
+    "packages/deployment",
+    "packages/dashboard",
     "cli"
   ],
   "engines": {

@@ -1,0 +1,22 @@
+{
+  "name": "@operaxon/dashboard",
+  "version": "0.1.0",
+  "description": "Customer dashboard — REST API, auth, agent status, memory browser, billing view",
+  "license": "SEE LICENSE IN LICENSE-PROPRIETARY",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@operaxon/types": "*",
+    "@operaxon/onboarding": "*",
+    "@operaxon/deployment": "*",
+    "@operaxon/billing": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}

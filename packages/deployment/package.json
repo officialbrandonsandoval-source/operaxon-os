@@ -1,0 +1,20 @@
+{
+  "name": "@operaxon/deployment",
+  "version": "0.1.0",
+  "description": "Multi-tenant deployment — TenantManager, isolation, deployer, health checks, rollback",
+  "license": "SEE LICENSE IN LICENSE-PROPRIETARY",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@operaxon/types": "*",
+    "@operaxon/onboarding": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0"
+  }
+}
