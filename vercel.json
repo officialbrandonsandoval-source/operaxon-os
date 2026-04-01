@@ -1,0 +1,37 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nodejs",
+  "nodeVersion": "18.x",
+  "env": {
+    "PORT": {
+      "description": "Port to run on",
+      "default": "3000"
+    },
+    "NODE_ENV": {
+      "description": "Environment",
+      "default": "production"
+    },
+    "ANTHROPIC_API_KEY": {
+      "description": "Optional: Anthropic API key for Claude integration",
+      "required": false
+    },
+    "OPENAI_API_KEY": {
+      "description": "Optional: OpenAI API key",
+      "required": false
+    },
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Optional: Telegram bot token",
+      "required": false
+    },
+    "DISCORD_BOT_TOKEN": {
+      "description": "Optional: Discord bot token",
+      "required": false
+    }
+  },
+  "github": {
+    "silent": false,
+    "autoAlias": true
+  }
+}
